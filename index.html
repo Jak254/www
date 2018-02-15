@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<style>
+		body {
+			color: #8B008B;
+		}
+		
+		.Pet_Picture {
+			background-color: lightgrey;
+			width: 300px;
+			border: 10px solid blue;
+			padding: 10px; 
+			margin: 10px;
+		}
+
+</style>
+<script src="https://unpkg.com/vue"></script>		
+		<body style = "background: url(http://picchore.com/wp-content/uploads/2012/02/puppysunglasses.jpg) ; background-size: 20%">
+		</body>
+	<font size= "+2"> <center> <h1> Want to adopt a pet? </h1> </center> </font>
+	
+	<font size= "+2"> <center> <div id="navbar">  
+	<a href="contact.html"> <button> Contact </button> </a> 
+	
+	<font size = "+2"> <center> <br> <br> <br> <br> Avaible pets to buy: </br> </center> </font>
+	
+	<div class = "Pet_Picture"> <img src="Pet_Picture.jpg" width = "300" height = "300"> 
+	
+	<font size = "+2"> <center> One Iguana for $250 </center> </font> </div>
+	
+	<div id="Countdown">
+		<font size = "+2"> <a element @click="myScript"> <button> Bid Now! </button> </a> </font>
+		<div v-if="current_time < 11 && current_time > 0" class="time">{{ current_time }}</div>
+		
+	</div>
+	
+	
+</div>
+
+<script>
+
+	var Countdown = new Vue({
+		el:'#Countdown', 
+		data: {
+			title: "Countdown Clock",
+			current_time: 11,
+		},
+		methods: {
+			myScript: function(){
+				this.current_time = 10;
+				window.setInterval(()=> {
+					this.current_time--;
+					if (this.current_time == 0){
+						alert("Sorry, you have been outbid")
+					}
+				}, 1000 );
+			}
+		}
+	});
+</script>
+</center> </font>
+</html>
